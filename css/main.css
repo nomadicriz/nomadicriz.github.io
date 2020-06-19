@@ -1,0 +1,6 @@
+a.button {
+    cursor: pointer;
+}
+a.button:hover {
+    color: gray !important;
+}

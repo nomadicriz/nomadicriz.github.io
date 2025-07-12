@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter (for body) and Oswald (for headings, mimicking bold sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
+    <style>
+        /* Additional CSS to ensure font consistency and handle loading */
+        body {
+            font-family: 'Inter', sans-serif;
+            font-display: swap;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            font-display: swap;
+        }
+        /* Custom colors based on the provided logo hex codes */
+        .logo-dark-text {
+            color: #33463F; /* Updated: Dark green/grey for "Nomadic" */
+        }
+        .logo-accent-text {
+            color: #B38D56; /* Updated: Muted gold/brown for "Riz" */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+    <script>
+        // Ensure the DOM is fully loaded before running scripts that interact with elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Check if elements exist before adding event listeners
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close mobile menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            } else {
+                console.warn("Mobile menu button or menu not found. Mobile menu functionality may be impaired.");
+            }
+        });
+    </script>
+</body>
+</html>

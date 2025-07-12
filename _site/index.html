@@ -1,9 +1,85 @@
----
-layout: default
-title: Home
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | NomadicRiz</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter (for body) and Oswald (for headings, mimicking bold sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <style>
+        /* Additional CSS to ensure font consistency and handle loading */
+        body {
+            font-family: 'Inter', sans-serif;
+            font-display: swap;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            font-display: swap;
+        }
+        /* Custom colors based on the provided logo hex codes */
+        .logo-dark-text {
+            color: #33463F; /* Updated: Dark green/grey for "Nomadic" */
+        }
+        .logo-accent-text {
+            color: #B38D56; /* Updated: Muted gold/brown for "Riz" */
+        }
+    </style>
+</head>
+<body class="antialiased">
 
-<!-- Hero Section -->
+    <header class="bg-white shadow-lg py-4 px-6 md:px-12 fixed w-full z-50 rounded-b-xl border-b-4 border-yellow-500">
+    <nav class="container mx-auto flex justify-between items-center">
+        <!-- Logo/Site Title -->
+        <a href="/" class="flex items-center space-x-2 rounded-md p-2 transition duration-300">
+            <img src="/logo_2.jpg" alt="NomadicRiz Logo" class="h-10 md:h-12 w-auto rounded-md">
+            <span class="text-3xl font-extrabold logo-dark-text">
+                Nomadic<span class="logo-accent-text">Riz</span>
+            </span>
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+            <button id="mobile-menu-button" class="text-gray-600 hover:text-yellow-600 focus:outline-none p-2 rounded-md">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Navigation Links (Desktop) -->
+        <ul class="hidden md:flex space-x-10">
+            <li><a href="/#home" class="text-gray-700 hover:text-yellow-600 font-semibold transition duration-300 rounded-md p-2">Home</a></li>
+            <li><a href="/#about" class="text-gray-700 hover:text-yellow-600 font-semibold transition duration-300 rounded-md p-2">About Me</a></li>
+            <li><a href="/pages/hiking.html" class="text-gray-700 hover:text-yellow-600 font-semibold transition duration-300 rounded-md p-2">Guides & Tips</a></li>
+            <li><a href="/#infographics" class="text-gray-700 hover:text-yellow-600 font-semibold transition duration-300 rounded-md p-2">Explore by Region</a></li>
+            <li><a href="/#featured-posts" class="text-gray-700 hover:text-yellow-600 font-semibold transition duration-300 rounded-md p-2">Featured Posts</a></li>
+            <li><a href="/#contact" class="text-gray-700 hover:text-yellow-600 font-semibold transition duration-300 rounded-md p-2">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Mobile Menu (Hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden mt-4 bg-white rounded-lg shadow-lg">
+        <ul class="flex flex-col space-y-3 p-4">
+            <li><a href="/#home" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-md transition duration-300">Home</a></li>
+            <li><a href="/#about" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-md transition duration-300">About Me</a></li>
+            <li><a href="/pages/hiking.html" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-md transition duration-300">Guides & Tips</a></li>
+            <li><a href="/#infographics" class="block text-700 hover:bg-gray-100 p-2 rounded-md transition duration-300">Explore by Region</a></li>
+            <li><a href="/#featured-posts" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-md transition duration-300">Featured Posts</a></li>
+            <li><a href="/#contact" class="block text-gray-700 hover:bg-gray-100 p-2 rounded-md transition duration-300">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+
+    <!-- Hero Section -->
 <section id="home" class="hero-background relative h-screen flex items-center justify-center text-center text-white p-4">
     <div class="absolute inset-0 bg-black opacity-70 rounded-lg"></div> <!-- Darker Overlay for contrast -->
     <div class="relative z-10 max-w-5xl mx-auto">
@@ -23,7 +99,7 @@ title: Home
 <section id="about" class="py-20 px-6 md:px-12 section-bg-light rounded-2xl shadow-xl w-full my-16">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-16">
         <div class="md:w-1/2">
-            <img src="{{ site.baseurl }}/img/about_me.jpg" alt="About Me" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
+            <img src="/img/about_me.jpg" alt="About Me" class="rounded-2xl shadow-2xl w-full h-auto object-cover">
         </div>
         <div class="md:w-1/2 text-center md:text-left">
             <h2 class="text-4xl sm:text-5xl font-bold natgeo-dark-text mb-8 leading-tight">
@@ -48,13 +124,13 @@ title: Home
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             <!-- Guide Card 1: Offbeat Locations -->
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out group">
-                <img src="{{ site.baseurl }}/img/offbeat_02.jpg" alt="Offbeat Locations" class="w-full h-56 object-cover object-center">
+                <img src="/img/offbeat_02.jpg" alt="Offbeat Locations" class="w-full h-56 object-cover object-center">
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold natgeo-dark-text mb-4">Offbeat Destinations</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         Uncover less-traveled paths and unique cultural experiences away from tourist crowds.
                     </p>
-                    <a href="{{ site.baseurl }}/pages/offbeat.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
+                    <a href="/pages/offbeat.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
                         Discover Hidden Gems
                         <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -65,13 +141,13 @@ title: Home
 
             <!-- Guide Card 2: Budget Travel -->
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out group">
-                <img src="{{ site.baseurl }}/img/budget_01.jpg" alt="Budget Travel" class="w-full h-56 object-cover object-center">
+                <img src="/img/budget_01.jpg" alt="Budget Travel" class="w-full h-56 object-cover object-center">
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold natgeo-dark-text mb-4">Budget Travel Hacks</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         Learn smart strategies for flights, accommodation, food, and activities to save money on your trips.
                     </p>
-                    <a href="{{ site.baseurl }}/pages/budget.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
+                    <a href="/pages/budget.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
                         Master Budgeting
                         <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -82,13 +158,13 @@ title: Home
 
             <!-- Guide Card 3: Hiking Guide -->
             <div class="bg-white rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition duration-300 ease-in-out group">
-                <img src="{{ site.baseurl }}/img/hiking_01.jpg" alt="Hiking Guide" class="w-full h-56 object-cover object-center">
+                <img src="/img/hiking_01.jpg" alt="Hiking Guide" class="w-full h-56 object-cover object-center">
                 <div class="p-8">
                     <h3 class="text-2xl font-semibold natgeo-dark-text mb-4">Hiking & Trekking Guides</h3>
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         From gear essentials to trail safety, get all the tips for an incredible hiking adventure.
                     </p>
-                    <a href="{{ site.baseurl }}/pages/hiking.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
+                    <a href="/pages/hiking.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
                         Plan Your Hike
                         <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -108,29 +184,29 @@ title: Home
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             <!-- Region Item 1: India -->
-            <a href="{{ site.baseurl }}/pages/india.html" class="relative group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="{{ site.baseurl }}/img/india.jpg" alt="India" class="w-full h-64 object-cover object-center">
+            <a href="/pages/india.html" class="relative group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="/img/india.jpg" alt="India" class="w-full h-64 object-cover object-center">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
                     <p class="text-white text-xl font-semibold">India</p>
                 </div>
             </a>
             <!-- Region Item 2: Nepal -->
-            <a href="{{ site.baseurl }}/pages/nepal.html" class="relative group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="{{ site.baseurl }}/img/nepal.jpg" alt="Nepal" class="w-full h-64 object-cover object-center">
+            <a href="/pages/nepal.html" class="relative group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="/img/nepal.jpg" alt="Nepal" class="w-full h-64 object-cover object-center">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
                     <p class="text-white text-xl font-semibold">Nepal</p>
                 </div>
             </a>
             <!-- Region Item 3: Vietnam -->
-            <a href="{{ site.baseurl }}/pages/vietnam.html" class="relative group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="{{ site.baseurl }}/img/vietnam.jpg" alt="Vietnam" class="w-full h-64 object-cover object-center">
+            <a href="/pages/vietnam.html" class="relative group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="/img/vietnam.jpg" alt="Vietnam" class="w-full h-64 object-cover object-center">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
                     <p class="text-white text-xl font-semibold">Vietnam</p>
                 </div>
             </a>
             <!-- Region Item 4: Philippines -->
-            <a href="{{ site.baseurl }}/pages/philippines.html" class="relative group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
-                <img src="{{ site.baseurl }}/img/philippines.jpg" alt="Philippines" class="w-full h-64 object-cover object-center">
+            <a href="/pages/philippines.html" class="relative group rounded-xl overflow-hidden shadow-lg transform hover:scale-105 transition duration-300 ease-in-out">
+                <img src="/img/philippines.jpg" alt="Philippines" class="w-full h-64 object-cover object-center">
                 <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl">
                     <p class="text-white text-xl font-semibold">Philippines</p>
                 </div>
@@ -154,7 +230,7 @@ title: Home
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         My detailed account of trekking Nepal's iconic Annapurna Circuit, with tips for solo adventurers.
                     </p>
-                    <a href="{{ site.baseurl }}/pages/annapurna_circuit.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
+                    <a href="/pages/annapurna_circuit.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
                         Read Post
                         <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -171,7 +247,7 @@ title: Home
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         How I managed to explore Southeast Asia on a shoestring budget without missing out on adventures.
                     </p>
-                    <a href="{{ site.baseurl }}/pages/budget.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
+                    <a href="/pages/budget.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
                         Read Post
                         <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -188,7 +264,7 @@ title: Home
                     <p class="text-gray-600 mb-6 leading-relaxed">
                         My journey through India's lesser-known destinations, revealing hidden gems and local secrets.
                     </p>
-                    <a href="{{ site.baseurl }}/pages/offbeat.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
+                    <a href="/pages/offbeat.html" class="natgeo-yellow-text hover:text-yellow-600 font-bold flex items-center justify-center group-hover:underline">
                         Read Post
                         <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
@@ -240,3 +316,58 @@ title: Home
         </div>
     </div>
 </section>
+
+
+    <footer class="bg-gray-900 text-white py-12 px-6 md:px-12 rounded-t-2xl border-t-4 border-yellow-500">
+    <div class="container mx-auto text-center">
+        <p class="text-2xl font-bold mb-6">NomadicRiz</p>
+        <div class="flex flex-wrap justify-center space-x-6 mb-4 text-lg">
+            <a href="https://www.instagram.com/nomadicriz" target="_blank" rel="noopener noreferrer" class="text-gray-300 hover:text-yellow-400 transition duration-300">
+                <i class="fab fa-instagram text-2xl"></i> <span class="sr-only">Instagram</span>
+            </a>
+            <a href="mailto:nomadicriz@gmail.com" class="text-gray-300 hover:text-yellow-400 transition duration-300">
+                <i class="fas fa-envelope text-2xl"></i> <span class="sr-only">Email</span>
+            </a>
+        </div>
+        <p class="text-gray-400 text-md">&copy; 2025 NomadicRiz. All rights reserved.</p>
+    </div>
+</footer>
+
+
+    <script>
+        // Ensure the DOM is fully loaded before running scripts that interact with elements
+        document.addEventListener('DOMContentLoaded', function() {
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Check if elements exist before adding event listeners
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close mobile menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            } else {
+                console.warn("Mobile menu button or menu not found. Mobile menu functionality may be impaired.");
+            }
+        });
+    </script>
+</body>
+</html>

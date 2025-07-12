@@ -1,0 +1,55 @@
+---
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f8f8; /* Very light gray, almost white */
+    color: #333333; /* Darker text for strong contrast */
+}
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif; /* Bold sans-serif for headings */
+}
+.hero-background {
+    /* Updated to use a local path with common .jpg extension */
+    background-image: url('/img/bg_image_06.jpg'); /* Darker, more serious image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+}
+.section-bg-light {
+    background-color: #ffffff; /* Clean white for content sections */
+}
+.section-bg-dark {
+    background-color: #f0f0f0; /* Slightly off-white for alternating sections */
+}
+.natgeo-yellow {
+    background-color: #FFCC00; /* National Geographic iconic yellow */
+}
+.natgeo-yellow-text {
+    color: #FFCC00;
+}
+.natgeo-dark-text {
+    color: #262626; /* Near black for strong headings */
+}
+.natgeo-button {
+    background-color: #FFCC00; /* Yellow button */
+    color: #262626; /* Dark text on yellow */
+    transition: all 0.3s ease;
+}
+.natgeo-button:hover {
+    background-color: #E6B800; /* Slightly darker yellow on hover */
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* Custom styles for content cards (reused from other pages) */
+.content-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
